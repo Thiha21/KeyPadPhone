@@ -36,13 +36,13 @@ namespace KeyPadPhone
                 if (string.IsNullOrEmpty(sequence))
                     continue;
 
-                int number = sequence[0] - '0'; // Convert the first character to a number
-                int count = sequence.Length; // Number of times the button is pressed
+                int number = sequence[0] - '0';
+                int count = sequence.Length;
 
                 if (keypad.TryGetValue(number, out string characters))
                 {
-                    int index = (count - 1) % characters.Length; // Calculate the index
-                    result += characters[index]; // Append the character to the result
+                    int index = (count - 1) % characters.Length;
+                    result += characters[index];
                 }
             }
 
